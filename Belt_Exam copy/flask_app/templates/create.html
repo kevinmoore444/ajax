@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sasquatch Websighting</h1>
+    <h2>Welcome {{logged_user.first_name}}!</h2>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/users/logout">Log Out</a>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form action="/sighting/create" method="post">
+        <p>Location</p>
+        <input type="text" name="location" id="location">
+        <p>What Happened</p>
+        <textarea type="text" name="what_happened" id="what_happened"></textarea>
+        <p>Date of Siting</p>
+        <input type="date" name="sighting_date" id="sighting_date">
+        <p># of Sasquatches</p>
+        <input type="number" name="number_of" id="number_of"></input>
+        <p><button>Report</button></p>
+    </form>
+</body>
+</html>

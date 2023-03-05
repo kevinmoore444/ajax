@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sasquatch Websighting</h1>
+    <h2>Welcome {{logged_user.first_name}}!</h2>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/users/logout">Log Out</a>
+    <h2>{{one_sighting.location}} on {{one_sighting.sighting_date}}</h2>
+    <h3>What Happened:</h3>
+    <p>{{one_sighting.what_happened}}</p>
+    <h3># of Sasquatches: {{one_sighting.number_of}}</h3>
+    <h3>Reported By: {{one_sighting.reporter.first_name}} {{one_sighting.reporter.last_name}}</h3>
+</body>
+</html>
